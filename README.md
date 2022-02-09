@@ -110,7 +110,7 @@ jobs:
     steps:
       - name: Build Changelog
         id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
+        uses: meiyanathanj/release-changelog-builder-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -142,7 +142,7 @@ The action supports flexible configuration options to modify vast areas of its b
 
 ```yml
 - name: "Build Changelog"
-  uses: mikepenz/release-changelog-builder-action@{latest-release}
+  uses: meiyanathanj/release-changelog-builder-action@{latest-release}
   with:
     configuration: "configuration.json"
   env:
@@ -234,7 +234,7 @@ For advanced use cases additional settings can be provided to the action
 - name: "Complex Configuration"
   id: build_changelog
   if: startsWith(github.ref, 'refs/tags/')
-  uses: mikepenz/release-changelog-builder-action@{latest-release}
+  uses: meiyanathanj/release-changelog-builder-action@{latest-release}
   with:
     configuration: "configuration_complex.json"
     owner: "mikepenz"
@@ -358,54 +358,3 @@ It's suggested to export the token to your path before running the tests so that
 ```bash
 export GITHUB_TOKEN=your_personal_github_pat
 ```
-
-## Developed By
-
-* Mike Penz
- * [mikepenz.com](http://mikepenz.com) - <mikepenz@gmail.com>
- * [paypal.me/mikepenz](http://paypal.me/mikepenz)
-
-## Credits
-
-- Core parts of the PR fetching logic are based on [pull-release-notes](https://github.com/nblagoev/pull-release-notes)
-  - Nikolay Blagoev - [GitHub](https://github.com/nblagoev/)
-- [action-gh-release](https://github.com/softprops/action-gh-release) for a few great README ideas
-
-## Other actions
-
-- [xray-action](https://github.com/mikepenz/xray-action/)
-- [action-junit-report](https://github.com/mikepenz/action-junit-report)
-- [jira-release-composition-action](https://github.com/mikepenz/jira-release-composite-action)
-
-## License
-
-    Copyright for portions of pr-release-notes are held by Nikolay Blagoev, 2019-2020 as part of project pull-release-notes.
-    All other copyright for project pr-release-notes are held by Mike Penz, 2021.
-
-## Fork License
-
-All patches and changes applied to the original source are licensed under the Apache 2.0 license.
-
-    Copyright 2021 Mike Penz
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
-## Sample result release notes / changelog
-
-<div align="center">
-  <a href="https://github.com/mikepenz/release-changelog-builder-action/runs/1270879787"><img src=".github/images/release_changelog_builder_expanded.png"/></a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/mikepenz/release-changelog-builder-action/releases/tag/v0.9.0"><img src=".github/images/release_changelog_result.png"/></a>
-</div>
