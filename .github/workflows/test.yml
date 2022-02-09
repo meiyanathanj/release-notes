@@ -12,8 +12,8 @@ jobs:
       - name: "Build Changelog"
         id: github_release
         uses: ./
-        with:
-          configuration: "configs/configuration_repo.json"
+        # with:
+          # configuration: "configs/configuration.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
